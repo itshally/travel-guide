@@ -9,12 +9,12 @@ import Credits from "../components/Credits";
 
 export default props => {
   const regions = [
-    "/travel-guide/africa",
-    "/travel-guide/americas",
-    "/travel-guide/asia",
-    "/travel-guide/europe",
-    "/travel-guide/oceania",
-    "/travel-guide/polar"
+    "/africa",
+    "/americas",
+    "/asia",
+    "/europe",
+    "/oceania",
+    "/polar"
   ];
 
   const routes = regions.map((region, index) => {
@@ -42,7 +42,7 @@ export default props => {
         <Header />
         <Switch>
           <Route
-            path="/travel-guide"
+            path="/"
             exact={true}
             render={() => (
               <RegionList
@@ -54,7 +54,7 @@ export default props => {
           {routes}
           <Route
             exact
-            path="/travel-guide/detail/:id"
+            path="/detail/:id"
             render={() => (
               <Detail
                 flags={props.state.flagList}
@@ -64,7 +64,7 @@ export default props => {
           />
           <Route
             exact
-            path="/travel-guide/credits"
+            path="/credits"
             render={() => <Credits />}
           />
         </Switch>
